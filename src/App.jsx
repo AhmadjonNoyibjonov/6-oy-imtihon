@@ -30,7 +30,7 @@ function App() {
     <Routes>
       <Route path="/login" element={<Login></Login>}></Route>
       <Route path="/register" element={<Register></Register>}></Route>
-      IsAuth &&{" "}
+      IsAuth && {" "}
       <>
         <Route path="/" element={<Home></Home>}></Route>{" "}
       </>

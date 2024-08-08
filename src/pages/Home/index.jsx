@@ -30,15 +30,23 @@ function Home() {
   };
 
   const handleDeleteTodo = (index) => {
-    const newTodos = todos.filter((_, i) => i !== index);
-    setTodos(newTodos);
-    localStorage.setItem("todos", JSON.stringify(newTodos));
+    const confirmDelete = window.confirm("Do you want to delete card?");
+    if (confirmDelete) {
+      const newTodos = todos.filter((_, i) => i !== index);
+      setTodos(newTodos);
+      localStorage.setItem("todos", JSON.stringify(newTodos));
+    }
   };
 
+
   const handleClearAll = () => {
-    setTodos([]);
-    localStorage.removeItem("todos");
+    const confirmClear = window.confirm("Do you want to delete all cards?");
+    if (confirmClear) {
+      setTodos([]);
+      localStorage.removeItem("todos");
+    }
   };
+
 
   return (
     <div className={`${styles.container} ${styles.wrapper}`}>
